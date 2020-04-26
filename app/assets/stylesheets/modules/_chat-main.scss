@@ -23,16 +23,16 @@
     }
 
     &__edit-btn{
-    height: 40px;
-    line-height: 40px;
-    padding: 0 20px;
-    margin-top: 30px;
-    border: solid 1px $blue-button;
-    position: absolute;
-    right: 40px;
-    a{
-      color: $blue-button;
-    }
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 30px;
+      border: solid 1px $blue-button;
+      position: absolute;
+      right: 40px;
+      a{
+        color: $blue-button;
+      }
     }
   }
   .messages{
