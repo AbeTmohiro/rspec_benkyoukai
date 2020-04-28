@@ -1,4 +1,8 @@
 .chat-side{
+  a{
+    text-decoration: none;
+    color: $white;
+  }
   width: 300px;
   color: $white;
   float: left;
