@@ -10,36 +10,14 @@
     .main-header__edit-btn
       = link_to('Edit', '#')
   .messages
-    .message
-      .message__upper-info
-        .message__upper-info__talker
-        ヨーダ
-        .message__upper-info__date 
-          1996/03/29(Fri) 10:00:05
-      %p.message__text 今日もいい天気
-
-    .message
-      .message__upper-info
-        .message__upper-info__talker
-        メイス
-        .message__upper-info__date 
-          1996/03/29(Fri) 10:00:06
-      %p.message__text チューバッカ飼いたい
-          
-    .message
-      .message__upper-info
-        .message__upper-info__talker
-        ドゥークー
-        .message__upper-info__date 
-          1996/03/29(Fri) 12:00:07
-      %p.message__text それな
-
+    = render @messages
+    
   .form
-    %form#new-message.new-message{method: "post"}
+    = form_with model:[@group, @message], html: {class: "new-message"} do |f|
       .input-box
-        %input.input-box__text{placeholder: "type a message"}
-        %label{class: "input-box__image"}
+        = f.text_field :content,class: 'input-box__text',placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
           %i.far.fa-image
-          %input{type: "file"}
-      %input.submit-btn{type: "submit",value:"Send"}
+          = f.file_field :image,class: 'Hidden'
+      = f.submit 'Send', class: 'submit-btn'
           
