@@ -4,9 +4,9 @@
       .main-header__left-box__current-group ジェダイ評議会
       %ul.main-header__left-box__member-list 
         Member :
-        %li.main-header__left-box__member-list__member メイス
-        %li.main-header__left-box__member-list__member ヨーダ
-        %li.main-header__left-box__member-list__member ドゥークー
+        %li.main-header__left-box__member-list__member
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
     .main-header__edit-btn
       = link_to('Edit', '#')
   .messages
