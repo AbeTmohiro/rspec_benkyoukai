@@ -1,7 +1,8 @@
 	
 $(function(){
   function buildHTML(message){
-      let html = message.image?
+      let Image = (message.image !== null) ? `<img class="Message__image" src="${message.image}"></img>` : ''
+      let html = 
         `<div class="message">
           <div class="message__upper-info">
             <div class="message__upper-info__talker">
@@ -15,24 +16,9 @@ $(function(){
             <p class="message__text">
               ${message.content}
             </p>
-            <img class="Message__image" src="${message.image}">
+            ${Image}
           </div>
-        </div>`:
-      `<div class="message">
-        <div class="message__upper-info">
-          <div class="message__upper-info__talker">
-            ${message.user_name}
-          </div>
-          <div class="message__upper-info__date">
-            ${message.created_at}
-          </div>
-        </div>
-        <div class="message">
-          <p class="message__textt">
-            ${message.content}
-          </p>
-        </div>
-      </div>`;
+        </div>`
       return html;
     };
   
