@@ -21,7 +21,6 @@ $(function(){
 
   let reloadMessages = function() {
     let last_message_id = $('.message:last').data("message-id");
-    console.log(last_message_id);
     $.ajax({
       url: "api/messages",
       type: 'get',
