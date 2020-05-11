@@ -3,7 +3,7 @@ $(function(){
   function buildHTML(message){
       let Image = (message.image !== null) ? `<img class="Message__image" src="${message.image}"></img>` : ''
       let html = 
-        `<div class="message">
+        `<div class="message" data-message-id=${message.id}>
           <div class="message__upper-info">
             <div class="message__upper-info__talker">
               ${message.user_name}
@@ -12,15 +12,14 @@ $(function(){
               ${message.created_at}
             </div>
           </div>
-          <div class="message">
             <p class="message__text">
               ${message.content}
             </p>
             ${Image}
-          </div>
+          
         </div>`
       return html;
-    };
+  };
   
   $('.new-message').on('submit', function(e){
     e.preventDefault();
