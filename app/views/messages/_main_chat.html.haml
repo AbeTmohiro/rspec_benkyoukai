@@ -15,7 +15,7 @@
     = render @messages
     
   .form
-    = form_with model:[@group, @message], html: {class: "new-message"} do |f|
+    = form_with model:[@group, @message], html: {class: "new-message"},local: true do |f|
       .input-box
         = f.text_field :content,class: 'input-box__text',placeholder: 'type a message'
         = f.label :image, class: 'input-box__image' do
