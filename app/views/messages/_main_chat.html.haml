@@ -12,7 +12,8 @@
       =link_to edit_group_path(@group) do
         Edit
   .messages
-    = render @messages
+    .message-list
+      = render @messages
     
   .form
     = form_with model:[@group, @message], html: {class: "new-message"},local: true do |f|

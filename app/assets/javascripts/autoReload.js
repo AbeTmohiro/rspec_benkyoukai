@@ -33,7 +33,7 @@ $(function(){
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
         });
-        $('.messages').append(insertHTML);
+        $('.message-list').append(insertHTML);
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       }
       })
